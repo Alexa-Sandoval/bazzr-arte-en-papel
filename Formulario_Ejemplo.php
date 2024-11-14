@@ -6,7 +6,6 @@
 	<title>Practica_Basico</title>
 </head>
 <body>
-	<center>
 	<form action="conexion_Practica.php" method="post">
 		<br><br><label for="NOM">Tu nombre?:</label><br><br>
 		<input type="text" id="NOM" name="NOM"><br><br><br>
@@ -17,6 +16,5 @@
 		<label for="GR">Grupo?:</label><br><br>
 		<input type="varchar" id="GR" name="GR"><br><br><br>
 		<input type="submit" value="enviar" name="enviar"><br><br>
-	</center>
 </body>
 </html>
