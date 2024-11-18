@@ -1,6 +1,6 @@
 git init
 git add .
-git commit -m "Primer commit del proyecto de formulario PHP con index.html"
+git commit -m "Primer commit del proyecto de index PHP"
 git branch -M main
 git remote add origin https://github.com/tu-usuario/Practica_PHP_MySQL.git
 git push -u origin main
