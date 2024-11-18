@@ -10,15 +10,16 @@
 	<form action="conexion_Usuario.php" method="post">
 
 		<label for="nom">Nombre:</label><br><br>
-		<input type="text" id="nom" name="nom"><br><br><br>
+		<input type="text" id="nom" name="nom" required><br><br><br>
 
-		<label for="Corr_Ele">Correo Eletronico:</label><br><br>
-		<input type="varchar" id="Corr_Ele" name="Corr_Ele"><br><br><br>
+		<label for="Corr_Ele">Correo Electrónico:</label><br><br>
+		<input type="email" id="Corr_Ele" name="Corr_Ele" required><br><br><br>
 
 		<label for="pass">Contraseña:</label><br><br>
-		<input type="password" id="pass" name="pass"><br><br><br>
+		<input type="password" id="pass" name="pass" required><br><br><br>
 
 		<input type="submit" value="enviar" name="enviar"><br><br>
+	</form>
 	</center>
 </body>
 </html>
