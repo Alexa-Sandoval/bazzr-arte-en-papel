@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Referencia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            height: 400px;
+    background-image: linear-gradient(#ffeee1, white);
+            
+        }
+
+        header {
+            background-color: #da4168;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
+        .main-banner {
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 30px;
+        }
+
+        .main-banner img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 5px;
+        }
+
+        .card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+        }
+
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .card h3 {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #232f3e;
+        }
+
+        footer {
+    background-color: #da4168;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 5px;
+        }
+
+        /* Estilos del carrusel */
+        .carousel {
+    position: relative;
+    max-width: 100%;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+        }
+
+        .carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+      width="10" height="10"
+;
+        }
+
+        .carousel-images img {
+    width: 100%;
+    max-height: 800px;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            font-size: 24px;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 10;
+        }
+
+        .arrow.left {
+            left: 10px;
+        }
+
+        .arrow.right {
+            right: 10px;
+        }
+
+        .arrow:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <footer><header>   
+            <h2>Bazzar Arte en Papel &#127775;</h2>
+        <nav>
+         <h3><a href="ejemplo.html">Inicio</a>
+         <a href="categorias.html">Categorías</a></h3>
+        </nav>
+    </header></footer>
+
+    <!-- Carrusel -->
+    <div class="carousel">
+        <div class="carousel-images">
+            <img src="banner-1.png" alt="Recomendado 1" width="80%" height="300">
+            <img src="banner3.png" alt="Recomendado 2" width="80%" height="300">
+            <img src="banner4.png" alt="Recomendado 3" width="80%" height="300">
+            
+        </div>
+        <button class="arrow left">&lt;</button>
+        <button class="arrow right">&gt;</button>
+    </div>
+<footer><h3>Recomendados&nbsp;</h3></footer>
+    <div class="container">
+        <div class="card">
+            <img src="arete_estrella.jpeg" alt="Producto 1" width="300" height="200" >
+            <h3>Producto 1</h3>
+            <p>Aretes de Estrellas.</p>
+        </div>
+        <div class="card">
+            <img src="bolsa_chica.jpeg" alt="Producto 2" width="300" height="200" >
+            <h3>Producto 2</h3>
+            <p>Bolsa de fresitas.</p>
+        </div>
+        <div class="card">
+            <img src="plumas_capy.jpeg" alt="Producto 3" width="300" height="200" >
+            <h3>Producto 3</h3>
+            <p>Plumas de Capybara.</p>
+        </div>
+    </div>
+    <footer class="Escuela"><h3>Articulos Escolares</h3></footer>
+    
+    <div class="container">
+        <div class="card">
+            <img src="bolsa_chica.jpeg" alt="Producto 4" width="300" height="200" >
+            <h3>Producto 1</h3>
+            <p>Aretes de Estrellas.</p>
+        </div>
+        <div class="card">
+            <img src="borrador.png" alt="Producto 5" width="300" height="200" >
+            <h3>Producto 2</h3>
+            <p>Bolsa de fresitas.</p>
+        </div>
+        <div class="card">
+            <img src="Plumas_paq.png" alt="Producto 6" width="300" height="200" >
+            <h3>Producto 3</h3>
+            <p>Paquetes de plumas.</p>
+        </div>
+    </div>
+
+    <script>
+        const images = document.querySelector('.carousel-images');
+        const leftArrow = document.querySelector('.arrow.left');
+        const rightArrow = document.querySelector('.arrow.right');
+        let currentIndex = 0;
+
+        const updateCarousel = () => {
+            const offset = -currentIndex * 100; // Cambia el desplazamiento según el porcentaje
+            images.style.transform = `translateX(${offset}%)`;
+        };
+
+        leftArrow.addEventListener('click', () => {
+            currentIndex = (currentIndex === 0) ? images.children.length - 1 : currentIndex - 1;
+            updateCarousel();
+        });
+
+        rightArrow.addEventListener('click', () => {
+            currentIndex = (currentIndex === images.children.length - 1) ? 0 : currentIndex + 1;
+            updateCarousel();
+        });
+    </script>
+</body>
+</html>
